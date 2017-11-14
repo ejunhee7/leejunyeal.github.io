@@ -4,382 +4,364 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
     <title>Richard Hendriks</title>
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    <style type="text/css">
+        @import url(
+        https://fonts.googleapis.com/css?family=Lato:400,700
+        );
+
         body {
             background: #fff;
-            font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
-            line-height: 1.4;
-            margin: 0 0;
-            margin-bottom: 100px;
-        }
-
-        em {
-            color: #999;
-        }
-
-        p {
-            line-height: 1.6;
-            font-size: 90%;
+            font-family: Lato, sans-serif;
+            margin: 0 0 80px;
         }
 
         a {
-            color: #2C85B1;
-            text-decoration: none;
-            font-weight: 400;
+            color: #2ecc71;
         }
 
-        ul {
-            margin-bottom: 0;
+        a:focus,
+        a:hover {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        p + p {
+            margin-top: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0
         }
 
         section {
-            margin: 1em 0 2em;
+            margin-top: 30px;
+        }
+
+        li {
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        li:before {
+            content: "\f052";
+            float: left;
+            font: 13px Octicons;
+            margin-top: 6px;
+            margin-left: -20px;
+            opacity: .1;
+            position: absolute;
         }
 
         blockquote {
-            margin: 0;
-            margin-bottom: 1em;
+            border-left: 5px solid #e7e9ec;
+            font-size: 14px;
         }
 
-        #resume {
-            margin: 2em 2em 2em 2.5em;
-            max-width: 760px;
+        em {
+            color: #95a5a6;
+            font-weight: normal;
+            font-style: normal;
         }
 
-        /* Resume heading */
-        .heading header {
-
+        h4 span:first-child {
+            color: #000;
+            font-weight: bold;
         }
 
-        .heading header h1 {
-            font-size: 180%;
-            margin: 0.5em 0;
-            font-weight: 600;
+        .container {
+            max-width: 750px;
+            padding: 0 30px;
         }
 
-        .heading header h2 {
-            font-size: 140%;
-            margin: 0;
-            font-weight: 400;
+        .col-sm-6 {
+            margin-bottom: 10px;
         }
 
-        .heading header .contact .detail {
-            margin: 0 1em 0 0;
+        .col-sm-12 h4 {
+            margin-top: 12px;
         }
 
-        .profile {
-            display: inline-block;
-            margin: 0 1em 0 0;
+        .col-sm-12 + .col-sm-12 {
+            margin-top: 30px;
         }
 
-        .profile strong,
-        .profile span {
-            display: inline-block;
-            margin: 0 1em 0 0;
+        #header {
+            background: #f4f6f6;
+            padding: 50px 0;
+            margin-bottom: 30px;
         }
 
-        /* section / line breaks */
-        section h2 {
-            font-size: 140%;
-            margin: 0 0 1em;
-            text-transform: uppercase;
-            color: #BC1B39;
-            font-weight: 400;
+        #header h2 {
+            color: #95a5a6;
+            font-size: 24px;
         }
 
-        /* Experience items */
-        .item {
-            margin: 0 0 1em;
-            padding: 0 0 1em;
-            border-bottom: 1px solid #F2EBEC;
+        #content h3 {
+            color: #f1c40f;
+            font-size: 26px;
+            margin-top: -4px;
         }
 
-        .item:last-child {
-            border-bottom: none;
+        #content aside {
+            text-align: right;
+            padding-right: 30px;
         }
 
-        .item header h3 {
-            margin: 0.2em 1em 0.2em 0;
-            display: inline-block;
-            font-weight: 600;
+        #profiles .network {
+            text-transform: capitalize;
         }
 
-        .item header a {
-            display: inline-block;
+        #work .position,
+        #volunteer .position {
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .item .position {
-            font-weight: 600;
-            font-size: 100%;
-            margin: 0.2em 1em 0.2em 0;
+        #education .area {
+            font-weight: bold;
         }
 
-        .item .startDate,
-        .item .endDate {
-            color: #6B6B6B;
+        #education .area:before {
+            content: "\f0d7";
+            font: 16px Octicons;
+            margin-right: 6px;
         }
 
-        .item .highlights {
-            list-style: square;
-            font-size: 90%;
+        #education .studyType {
+            margin-left: 25px;
         }
 
-        /* skills */
-        #skills .item {
-            margin: 0.5em 0;
-            padding: 0 0 0.5em;
-            font-size: 90%;
+        #awards .summary,
+        #publications .summary {
+            margin-top: 8px;
         }
 
-        #skills .item .name {
-            font-weight: 600;
-            display: inline-block;
-            text-transform: uppercase;
-            margin: 0 1em 0 0;
-            width: 23%;
-            vertical-align: top;
+        #publications .website a:before {
+            content: attr(href);
         }
 
-        #skills .item .keywords {
-            display: inline-block;
-            width: 70%;
-            vertical-align: top;
+        @media (min-width: 480px) {
+            .strike-through {
+                border-top: 1px solid #f4f6f6;
+                height: 20px;
+                margin-top: 12px;
+                margin-bottom: -2px;
+                position: relative;
+            }
+
+            .strike-through span,
+            .strike-through a {
+                background: #fff;
+                position: absolute;
+            }
+
+            .strike-through span:first-child {
+                padding-right: 20px;
+                margin-top: -12px;
+            }
+
+            .strike-through span + span {
+                font-size: 14px;
+                margin-top: -10px;
+                padding-left: 20px;
+                right: 0;
+            }
         }
 
-        /* education */
-        #education .item {
-            display: inline-block;
-            vertical-align: top;
-            width: 49.5%;
-            border-bottom: 0;
+        @media (max-width: 768px) {
+            .col-sm-6:last-child {
+                margin-bottom: 0px;
+            }
+
+            #content aside {
+                margin-bottom: 20px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            #publications .website a:before {
+                content: "View publication";
+            }
         }
 
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .date {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            .strike-through span:first-child {
+                margin-bottom: 7px;
+            }
+
+            .strike-through span {
+                display: block;
+            }
+
+            #header {
+                margin-bottom: 10px;
+                padding: 40px 0;
+            }
+
+            #actions {
+                display: none;
+            }
+        }
 
     </style>
-    <style media="print">
-        body {
-            font-size: 12px;
-        }
-    </style>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="resume">
-    <section class="heading">
-        <header>
-            <h1>Richard Hendriks</h1>
-            <div class="contact">
-                <span class="detail">
-                    <a href="mailto:richard.hendriks@mail.com">richard.hendriks@mail.com</a>
-                </span>
-                <span class="detail">
-                    (912) 555-4321
-                </span>
-                <span class="detail">
-                    <a href="http://richardhendricks.com">http://richardhendricks.com</a>
-                </span>
-            </div>
-        </header>
-        <p></p>
-        <p>Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and
-            Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his
-            work focuses on applied information theory, mostly optimizing lossless compression schema of both the
-            length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing
-            to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!</p>
-        <p></p>
-        <div class="profile">
-            <strong class="network">
-                Twitter
-            </strong>
-            <span class="username">
-                neutralthoughts
-            </span>
-        </div>
-        <div class="profile">
-            <strong class="network">
-                SoundCloud
-            </strong>
-            <span class="username">
-                <a href="https://soundcloud.com/dandymusicnl">dandymusicnl</a>
-            </span>
-        </div>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="item">
-            <div class="name">
-                Web Development
-            </div>
-            <div class="keywords">
-                HTML,
-                CSS,
-                Javascript
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-sm-push-3">
+                <h1>
+                    Lee Jun Yeal
+                </h1>
+                <h2>
+                    Programmer
+                </h2>
             </div>
         </div>
-        <div class="item">
-            <div class="name">
-                Compression
-            </div>
-            <div class="keywords">
-                Mpeg,
-                MP4,
-                GIF
+    </div>
+</header>
+<div id="content" class="container">
+    <section id="contact" class="row">
+        <aside class="col-sm-3">
+            <h3>Contact</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <strong>Email</strong>
+                    <div class="email">wowsoft72@naver.com</div>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Phone</strong>
+                    <div class="phone">(010) 3495-0631</div>
+                </div>
+                <div class="col-sm-6">
+                    <strong>Blog</strong>
+                    <div class="website">
+                        <a href="http://blog.naver.com/wowsoft72">http://blog.naver.com/wowsoft72</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="experience">
-        <h2>Experience</h2>
-        <section class="item">
-            <header>
-                <h3 class="name">Pied Piper</h3>
-            </header>
-            <span class="position">
-                CEO/President
-            </span>
-            <span class="startDate">
-                Dec 2013
-            </span>
-            <span class="endDate">
-                - Dec 2014
-            </span>
-            <div class="summary">
-                <p></p>
-                <p>Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that
-                    has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the
-                    theoretical limit of lossless compression.</p>
-                <p></p>
-            </div>
-            <ul class="highlights">
-                <li>Build an algorithm for artist to detect if their music was violating copy right infringement laws
-                </li>
-                <li>Successfully won Techcrunch Disrupt</li>
-                <li>Optimized an algorithm that holds the current world record for Weisman Scores</li>
-            </ul>
-        </section>
-    </section>
-    <section class="experience">
-        <h2>Volunteering</h2>
-        <div class="item">
-            <header>
-                <h3 class="name">CoderDojo</h3>
-            </header>
-            <span class="position">
-                Teacher
-            </span>
-            <span class="startDate">
-                Jan 2012
-            </span>
-            <span class="endDate">
-                - Jan 2013
-            </span>
-            <div class="summary">
-                <p>Global movement of free coding clubs for young people.</p>
-            </div>
-            <ul class="highlights">
-                <li>Awarded 'Teacher of the Month'</li>
-            </ul>
+    <section id="about" class="row">
+        <aside class="col-sm-3">
+            <h3>About</h3>
+        </aside>
+        <div class="col-sm-9">
+            <p>전시와 관련된 다양한 시스템을 개발하는 업체에서 연구소의 소장으로 근무하고 있으며
+               시스템과 관련된 H/W, 펌웨어 및 PC 기반 소프트웨어 개발등을 주로 하고 있음
+               전시 분야는 새로운 기술들이 한 발 앞서서 적용되는 경향이 있기 때문에 지속적으로
+               새로운 기술들에 대한 습득이 이루어져야 하는 만큼 어려움도 있지만 새로운걸 배우는
+               즐거움이 크기 때문에 재미를 갖고 일하고 있습니다</p>
         </div>
     </section>
-    <section id="education">
-        <h2>Education</h2>
-        <div class="item">
-            <header>
-                <h3 class="name">University of Oklahoma</h3>
-            </header>
-            <div class="dates">
-                <span class="startDate">
-                    Jun 2011
-                </span>
-                <span class="endDate">
-                    - Jan 2014
-                </span>
-            </div>
-            <div class="qualification">
-                <span class="studyType">
-                    Bachelor
-                </span>
-                <span class="area">
-                    - Information Technology
-                </span>
-                <span class="gpa">
-                    GPA: 4.0
-                </span>
+    <section id="profiles" class="row">
+        <aside class="col-sm-3">
+            <h3>Profiles</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <strong class="network">
+                        facebook
+                    </strong>
+                    <div class="username">
+                        <div class="url">
+                            <a href="https://www.facebook.com/junyeal.lee.9">https://www.facebook.com</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="awards">
-        <h2>Awards</h2>
-        <div class="item">
-            <div class="title">
-                Digital Compression Pioneer Award
-            </div>
-            <div class="date">
-                undefined NaN
-            </div>
-            <div class="awarder">
-                Techcrunch
-            </div>
-            <div class="summary">
-                <p>There is no spoon.</p>
-            </div>
-        </div>
-    </section>
-    <section id="publications">
-        <h2>Publications</h2>
-        <div class="item">
-            <div class="name">
-                Video compression for 3d media
-            </div>
-            <div class="publisher">
-                Hooli
-            </div>
-            <div class="releaseDate">
-                2014-10-01
-            </div>
-            <div class="website">
-                <a href="http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)">Link</a>
-            </div>
-            <div class="summary">
-                <p>Innovative middle-out compression algorithm that changes the way we store data.</p>
+    <section id="work" class="row">
+        <aside class="col-sm-3">
+            <h3>Work</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="position">
+                        이노테크 미디어 연구소 소장
+                    </div>
+                    <div class="summary">
+                        <p>인터렉티브 시스템, 크로마키 시스템, 통합 제어 시스템 외 다수 개발 </p>
+                    </div>
+                    <h4>Highlights</h4>
+                </div>
             </div>
         </div>
     </section>
-    <section id="languages">
-        <h2>Languages</h2>
-        <div class="item">
-            <div class="language">
-                English
-            </div>
-            <div class="fluency">
-                <em>Native speaker</em>
+    <section id="education" class="row">
+        <aside class="col-sm-3">
+            <h3>Education</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span>University of Dankook</span>
+                    </h4>
+                    <div class="area">
+                        Electronics
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="interests">
-        <h2>Interests</h2>
-        <div class="item">
-            <div class="name">
-                Wildlife
+    <section id="skills" class="row">
+        <aside class="col-sm-3">
+            <h3>Skills</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="name">
+                        <h4>Development Languages</h4>
+                    </div>
+                    <ul class="keywords">
+                        <li>C</li>
+                        <li>C#</li>
+                        <li>WPF</li>
+                    </ul>
+                </div>
             </div>
-            <ul class="keywords">
-                <li>Ferrets</li>
-                <li>Unicorns</li>
-            </ul>
         </div>
     </section>
-    <section id="references">
-        <h2>References</h2>
-        <div class="item">
-            <blockquote class="reference">
-                It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company
-                proved that he will be a valuable addition to any company.
-            </blockquote>
-            <div class="name">
-                — Erlich Bachman
+    <section id="interests" class="row">
+        <aside class="col-sm-3">
+            <h3>Interests</h3>
+        </aside>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="name">
+                        <h4>독서</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </div>
-
 </body>
 </html>
